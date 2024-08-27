@@ -3,8 +3,8 @@ import java.util.List;
 public class LinearSearch implements SearchBehavior {
     @Override
     public boolean contains(List<Person> people, Person person) {
-        for (Person p : people) {
-            if (p.equals(person)) {
+        for (Person item : people) {
+            if (item.equals(person)) {
                 return true;
             }
         }
