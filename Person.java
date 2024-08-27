@@ -1,20 +1,22 @@
+import java.util.Objects;
+
 /**
  * Creates a new Person
  */
-public class Person implements Comparable<Person>{
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
+public class Person implements Comparable<Person> {
+    private final String firstName;
+    private final String lastName;
+    private final String phoneNumber;
     private String reminder;
 
     /**
      * Creates a new Person
-     * @param firstName The persons first name
-     * @param lastName The persons last name
-     * @param phoneNumber The persons phone number
+     * @param firstName The person's first name
+     * @param lastName The person's last name
+     * @param phoneNumber The person's phone number
      * @param reminder The note saved about the person
      */
-    public Person(String firstName, String lastName, String phoneNumber, String reminder){
+    public Person(String firstName, String lastName, String phoneNumber, String reminder) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -25,13 +27,13 @@ public class Person implements Comparable<Person>{
      * Sets the note about the person
      * @param reminder A note about the person
      */
-    public void setReminder(String reminder){
+    public void setReminder(String reminder) {
         this.reminder = reminder;
     }
 
     /**
      * Gets the First Name of the Person
-     * @return Persons First Name
+     * @return Person's First Name
      */
     public String getFirstName() {
         return firstName;
@@ -39,7 +41,7 @@ public class Person implements Comparable<Person>{
 
     /**
      * Gets the Last Name of the Person
-     * @return Persons Last Name
+     * @return Person's Last Name
      */
     public String getLastName() {
         return lastName;
@@ -47,7 +49,7 @@ public class Person implements Comparable<Person>{
 
     /**
      * Gets the Phone Number of the Person
-     * @return The Persons phone number
+     * @return The Person's phone number
      */
     public String getPhoneNumber() {
         return phoneNumber;
@@ -62,35 +64,42 @@ public class Person implements Comparable<Person>{
     }
 
     /**
-     * Lexigraphically compares itself to the person provided
+     * Lexicographically compares itself to the person provided
      * @param person The person to compare to
      * @return 1 if it's bigger than the person passed in, 0 if equal, and -1 if smaller
      */
     @Override
     public int compareTo(Person person) {
-        if(lastName.compareTo(person.getLastName()) > 0) {
-            return 1;
-        } else if(lastName.compareTo(person.getLastName()) < 0){
-            return -1;
+        int lastNameComparison = lastName.compareTo(person.getLastName());
+        if (lastNameComparison != 0) {
+            return lastNameComparison;
         }
-
         return firstName.compareTo(person.getFirstName());
     }
 
     /**
-     * Lexigraphically compares itself to the person provided
-     * @param person The person to compare to
+     * Compares this Person to another for equality
+     * @param obj The object to compare to
      * @return true if equal and false if different
      */
     @Override
-    public boolean equals(Object person){
-        return ((Person)person).firstName.equalsIgnoreCase(firstName) && ((Person)person).lastName.equalsIgnoreCase(lastName);
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Person person = (Person) obj;
+        return firstName.equalsIgnoreCase(person.firstName) && lastName.equalsIgnoreCase(person.lastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName.toLowerCase(), lastName.toLowerCase());
     }
 
     /**
      * Creates a string representation of the person
      * @return all the information about the person
      */
+    @Override
     public String toString() {
         return firstName + " " + lastName + ": " + phoneNumber + " (" + reminder + ").";
     }

@@ -1,12 +1,8 @@
-import java.util.Collections;
 import java.util.List;
 
 public class BinarySearch implements SearchBehavior {
     @Override
     public boolean contains(List<Person> people, Person person) {
-        // Sort the list before performing binary search
-        Collections.sort(people);
-        
         int left = 0;
         int right = people.size() - 1;
         

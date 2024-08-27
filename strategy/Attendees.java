@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class Attendees {
-    private String title;
-    private List<Person> people;
+    private final String title;
+    private final List<Person> people;
     private SearchBehavior searchBehavior;
 
     public Attendees(String title) {
@@ -16,6 +17,9 @@ public class Attendees {
         Person person = new Person(firstName, lastName, phoneNumber, reminder);
         if (!searchBehavior.contains(people, person)) {
             people.add(person);
+            if (searchBehavior instanceof BinarySearch) {
+                Collections.sort(people); // Sort the list when using BinarySearch
+            }
             return person;
         } else {
             return null;
@@ -28,6 +32,9 @@ public class Attendees {
 
     public void setSearchBehavior(SearchBehavior searchBehavior) {
         this.searchBehavior = searchBehavior;
+        if (searchBehavior instanceof BinarySearch) {
+            Collections.sort(people); // Sort the list immediately when switching to BinarySearch
+        }
     }
 
     public List<Person> getList() {

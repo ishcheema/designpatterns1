@@ -4,7 +4,7 @@ import java.util.List;
  * Runs the Party Program
  */
 public class ListDriver {
-    private Attendees attendees;
+    private final Attendees attendees;
 
     /**
      * Creates the new Guest List
@@ -14,21 +14,21 @@ public class ListDriver {
     }
 
     /**
-     * Adds and removes guests from the list, then displays the lsit
+     * Adds and removes guests from the list, then displays the list
      */
     public void run() {
         System.out.println("\nCreating List:");
         addGuest("Jenny", "Davidson", "803-423-7878", "Had skinny looking dog.");
-        addGuest("Sally", "Anderson", "803-222-7656", "Alergic to Nuts");
+        addGuest("Sally", "Anderson", "803-222-7656", "Allergic to Nuts");
         addGuest("Kyle", "Anderson", "803-566-4545", "Mom can't park car");
         addGuest("Greg", "Parkson","803-878-5564", "NA");
         addGuest("Michael", "Bailey", "803-232-6655", "Loves hot dogs");
-        addGuest("Brad", "Zenker", "803-554-6868", "Lactose Intellorant");
+        addGuest("Brad", "Zenker", "803-554-6868", "Lactose Intolerant");
         addGuest("Trevor", "Davenport", "803-454-9944", "Can't sit still");
         addGuest("Jamie", "Jeffries", "803-656-3344", "Scared of dogs");
-        addGuest("Greg", "Parkson","803-878-5564", "He's Halarious");
+        addGuest("Greg", "Parkson","803-878-5564", "He's Hilarious");
         addGuest("Jamie", "Jeffries", "803-656-3344", "Likes Cats");
-        addGuest("Jenny", "Davidson", "803-423-7878", "Daughters best friend");
+        addGuest("Jenny", "Davidson", "803-423-7878", "Daughter's best friend");
 
         BinarySearch bSearch = new BinarySearch();
         attendees.setSearchBehavior(bSearch);
