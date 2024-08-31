@@ -2,7 +2,16 @@
 
 import java.util.List;
 
+/**
+ * The BookDriver class runs the Best Seller Book Program.
+ */
+
 public class BookDriver {
+
+    /**
+     * Creates the Best Seller, and the Store and Client.
+     * Then displays the top 5 best sellers and the Clients wishlist.
+     */
 
     public void run() {
         BestSellers bestSellers = new BestSellers();
@@ -33,19 +42,45 @@ public class BookDriver {
         displayFanReads(Genre.HISTORICAL_FICTION, fanReads);
     }
 
+    /**
+     * Displays a fan's recommended books based on genre.
+     *
+     * @param genre the genre to filter recommendations by.
+     * @param fanReads the FanReads instance containing recommendations.
+     */
+
     private void displayFanReads(Genre genre, FanReads fanReads) {
         List<Book> books = fanReads.getRecommendations(genre);
         displayBooks(books);
     }
+
+    /**
+     * Displays the store's best-selling books.
+     *
+     * @param store the Store instance containing best sellers.
+     */
 
     private void displayStoreBooks(Store store) {
         List<Book> books = store.getBestSellers();
         displayBooks(books);
     }
 
+    /**
+     * Displays a list of books.
+     *
+     * @param books the list of books to display.
+     */
+
+
     private void displayBooks(List<Book> books) {
         books.forEach(book -> System.out.println(book));
     }
+
+    /**
+     * The main method that starts the BookDriver program.
+     *
+     * @param args command line arguments (not used).
+     */
 
     public static void main(String[] args) {
         BookDriver driver = new BookDriver();

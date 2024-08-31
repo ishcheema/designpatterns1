@@ -1,4 +1,7 @@
 
+/**
+ * The Genre enumeration represents the various genres of books.
+ */
 
 public enum Genre {
    FICTION("Fiction"),
@@ -10,6 +13,12 @@ public enum Genre {
    ROMANCE("Romance");
 
    public final String label;
+
+   /**
+     * Constructs a new Genre instance.
+     *
+     * @param label the label of the genre.
+     */
    
    private Genre(String label) {
       this.label = label;
