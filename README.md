@@ -10,10 +10,19 @@ https://vscode.dev/github/ishcheema/designpatterns1/blob/main/strategy
 ===========================================================
 
 
-
 Observer Design Pattern
 
 https://vscode.dev/github/ishcheema/designpatterns1/blob/main/observer
 
 <img width="1098" alt="Screenshot 2024-08-29 at 1 56 19 PM" src="https://github.com/user-attachments/assets/c3bf6753-f553-4a05-accd-cc626ab307bb">
 <img width="1108" alt="Screenshot 2024-08-29 at 1 56 43 PM" src="https://github.com/user-attachments/assets/ac2129b4-d786-4b74-a1e9-2005037c8b22">
+
+
+===========================================================
+
+
+Decorator Design Pattern
+
+https://vscode.dev/github/ishcheema/designpatterns1/blob/main/decorator
+
+<img width="378" alt="Screenshot 2024-09-07 at 3 27 59 PM" src="https://github.com/user-attachments/assets/d07b8c37-daf6-44b8-a0b5-2e9e4b5ad79c">
