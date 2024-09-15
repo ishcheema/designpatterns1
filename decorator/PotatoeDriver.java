@@ -1,14 +1,79 @@
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class PotatoeDriver {
+    private final String[] options = { "Eyes", "Nose", "Mouth", "Ears", "Hat", "Quit" };
+	private static final String ERROR_USER_CHOICE = "Please enter a valid number between 1 and ";
+	private final Scanner scanner;
 
-    public static void main(String[] args) {
-        Character potatoe = new PotatoeHead("Mr. Potato Head");
+	/*
+	 * Original ascii drawing was found here:
+	 * https://www.asciiart.eu/movies/toy-story
+	 */
+	public PotatoeDriver() {
+		scanner = new Scanner(System.in);
+	}
 
-        potatoe = new Hat(potatoe);
-        potatoe = new Ears(potatoe);
-        potatoe = new Eyes(potatoe);
-        potatoe = new Nose(potatoe);
-        potatoe = new Mouth(potatoe);
+	public void play() {
+		Character potatoeHead = new PotatoeHead("Earl");
 
-        System.out.println(potatoe);
-    }
+        OUTER:
+        while (true) {
+            clear();
+            System.out.println("Here's our Potatoe Head: ");
+            System.out.println(potatoeHead);
+            displayMenu();
+            int userOption = getUserChoice();
+            switch (userOption) {
+                case 0 -> potatoeHead = new Eyes(potatoeHead);
+                case 1 -> potatoeHead = new Nose(potatoeHead);
+                case 2 -> potatoeHead = new Mouth(potatoeHead);
+                case 3 -> potatoeHead = new Ears(potatoeHead);
+                case 4 -> potatoeHead = new Hat(potatoeHead);
+                case 5 -> {
+                    break OUTER;
+                        }
+                default -> {
+                        }
+            }
+        }
+
+		System.out.println("Goodbye");
+	}
+
+	private void displayMenu() {
+		System.out.println("What would you like to give our potatoe head? ");
+		for (int i = 0; i < options.length; i++) {
+			System.out.println((i + 1) + ". " + options[i]);
+		}
+	}
+
+	private int getUserChoice() {
+		while (true) {
+			System.out.print("Enter Number: ");
+			try {
+				int index = Integer.parseInt(scanner.nextLine());
+
+				if (index < 1 || index > options.length) {
+					System.out.println(ERROR_USER_CHOICE + options.length);
+					continue;
+				}
+				return index - 1;
+
+			} catch (Exception e) {
+				System.out.println(ERROR_USER_CHOICE + options.length);
+			}
+		}
+	}
+
+	private void clear() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+	}
+
+	public static void main(String[] args) {
+		PotatoeDriver driver = new PotatoeDriver();
+		driver.play();
+	}
 }
