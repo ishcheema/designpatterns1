@@ -35,3 +35,12 @@ State Design Pattern
 https://vscode.dev/github/ishcheema/designpatterns1/blob/main/state
 
 <img width="390" alt="Screenshot 2024-09-15 at 5 58 27 PM" src="https://github.com/user-attachments/assets/b53ef517-3d61-4700-85c4-23bd6ba34833">
+
+===========================================================
+
+Singleton Design Pattern
+
+https://vscode.dev/github/ishcheema/designpatterns1/blob/main/singleton
+
+<img width="452" alt="Screenshot 2024-09-22 at 3 42 28 PM" src="https://github.com/user-attachments/assets/b029a1e5-0fe8-410a-854c-bfc3b431c88b">
+
