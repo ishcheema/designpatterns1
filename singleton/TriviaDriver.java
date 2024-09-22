@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class TriviaDriver {
     private static final String WIN_STRING = "YAY! You got it right!";
     private static final String LOSE_STRING = "You got it wrong!";
-    private Scanner reader;
-    private TriviaGame triviaGame;
+    private final Scanner reader;
+    private final TriviaGame triviaGame;
 
     public TriviaDriver() {
         reader = new Scanner(System.in);
