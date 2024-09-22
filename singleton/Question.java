@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * The Question class represents a single trivia question.
+ * It contains the question text, possible answers, and the correct answer.
+ */
+
 public class Question {
     private String question;
     private ArrayList<String> answers;

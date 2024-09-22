@@ -1,16 +1,29 @@
 import java.util.Scanner;
 
+/**
+ * TriviaDriver is the main class that drives the trivia game.
+ * It interacts with the player, manages rounds, and prints results.
+ */
+
 public class TriviaDriver {
     private static final String WIN_STRING = "YAY! You got it right!";
     private static final String LOSE_STRING = "You got it wrong!";
     private final Scanner reader;
     private final TriviaGame triviaGame;
 
+    /**
+     * Constructor for TriviaDriver. Initializes the game and greets the player.
+     */
+
     public TriviaDriver() {
         reader = new Scanner(System.in);
         triviaGame = TriviaGame.getInstance();
         System.out.println("Welcome to our trivia game");
     }
+
+    /**
+     * Starts the trivia game, allowing the user to play rounds or quit.
+     */
 
     public void play() {
         while(true){
@@ -32,6 +45,11 @@ public class TriviaDriver {
     }
 
     private void playRound() {
+
+    /**
+     * Plays a single round of trivia.
+     * The user is presented with a question and asked to enter an answer.
+     */
 
         Question question = triviaGame.getQuestion();
         System.out.println(question);
@@ -59,6 +77,12 @@ public class TriviaDriver {
             }
         }
     }
+
+    /**
+     * The main method to run the trivia game.
+     * 
+     * @param args Command-line arguments (not used)
+     */
 
     public static void main(String[] args){
         (new TriviaDriver()).play();

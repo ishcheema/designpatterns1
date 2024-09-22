@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * TriviaGame class that implements the Singleton pattern.
+ * It handles the trivia game logic, including score, question handling, and results.
+ */
+
 public class TriviaGame {
     private static TriviaGame triviaGame;
     private int score;
