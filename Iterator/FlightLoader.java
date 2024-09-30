@@ -4,6 +4,9 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * A utility class responsible for loading flight data from a text file.
+ */
 
 public class FlightLoader {
     //relative path to the file, based on the directory you currently have open

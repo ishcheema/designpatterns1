@@ -1,3 +1,7 @@
+/**
+ * Enumeration of common airports.
+ */
+
 public enum Airport {
     ATL("Hartsfield-Jackson Atlanta International Airport"),
     DFW("Dallas–Fort Worth International Airport"),
@@ -21,6 +25,12 @@ public enum Airport {
     DTW("Detroit Metro Wayne County Airport");
 
     public final String label;
+
+    /**
+     * Constructs an airport with the specified label.
+     *
+     * @param label The full name of the airport.
+     */
 
     private Airport(String label) {
         this.label = label;
