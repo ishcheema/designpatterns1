@@ -44,3 +44,12 @@ https://vscode.dev/github/ishcheema/designpatterns1/blob/main/singleton
 
 <img width="452" alt="Screenshot 2024-09-22 at 3 42 28 PM" src="https://github.com/user-attachments/assets/b029a1e5-0fe8-410a-854c-bfc3b431c88b">
 
+===========================================================
+
+Iterator Design Pattern
+
+https://vscode.dev/github/ishcheema/designpatterns1/blob/main/Iterator
+
+<img width="513" alt="Screenshot 2024-09-30 at 2 43 50 PM" src="https://github.com/user-attachments/assets/b83a12fc-f908-44c3-8466-8683b2ed7a85">
+
+
